@@ -10,6 +10,8 @@ ENV PYTHONUNBUFFERED=1
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
+RUN apk update
+RUN apk add git
 
 WORKDIR /app
 COPY . /app
